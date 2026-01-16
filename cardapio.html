@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+    .price {
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cardápio</h1>
+  </header>
+
+  <div class="container">
+    
+    <!-- Seção Drinks -->
+    <div class="card">
+      <h2>🍹 Drinks</h2>
+      <ul>
+        <li><span>Caipirinha de Limão</span><span class="price">R$ 15,00</span></li>
+        <li><span>Capeta de Abacaxi</span><span class="price">R$ 18,00</span></li>
+        <li><span>Capeta de Morango</span><span class="price">R$ 18,00</span></li>
+        <li><span>Capeta de Chocolate</span><span class="price">R$ 20,00</span></li>
+        <li><span>Cerveja</span><span class="price">R$ 8,00</span></li>
+        <li><span>Água</span><span class="price">R$ 4,00</span></li>
+        <li><span>Refrigerante</span><span class="price">R$ 6,00</span></li>
+      </ul>
+    </div>
+
+    <!-- Seção Petiscos -->
+    <div class="card">
+      <h2>🍟 Petiscos</h2>
+      <ul>
+        <li><span>Pastel</span><span class="price">R$ 7,00</span></li>
+        <li><span>Enrolado de Salsicha</span><span class="price">R$ 6,00</span></li>
+        <li><span>Batata-Frita</span><span class="price">R$ 15,00</span></li>
+        <li><span>Iscas de Peixe</span><span class="price">R$ 22,00</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
