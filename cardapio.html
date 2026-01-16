@@ -1,100 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cardápio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    li:last-child {
-      border-bottom: none;
-    }
-    .price {
-      font-weight: bold;
-      color: #2e7d32;
-    }
-    @media (max-width: 600px) {
-      .container {
-        grid-template-columns: 1fr;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardápio - Boombar</title>
+
+    <style>
+      :root {
+        --primary: #ff9800;
+        --secondary: #ff5722;
+        --dark: #121212;
+        --card: #1e1e1e;
+        --text: #ffffff;
+        --muted: #bbbbbb;
+        --price: #4caf50;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <header>
-    <h1>Cardápio</h1>
-  </header>
+      * {
+        box-sizing: border-box;
+      }
 
-  <div class="container">
-    
-    <!-- Seção Drinks -->
-    <div class="card">
-      <h2>🍹 Drinks</h2>
-      <ul>
-        <li><span>Caipirinha de Limão</span><span class="price">R$ 15,00</span></li>
-        <li><span>Capeta de Abacaxi</span><span class="price">R$ 18,00</span></li>
-        <li><span>Capeta de Morango</span><span class="price">R$ 18,00</span></li>
-        <li><span>Capeta de Chocolate</span><span class="price">R$ 20,00</span></li>
-        <li><span>Cerveja</span><span class="price">R$ 8,00</span></li>
-        <li><span>Água</span><span class="price">R$ 4,00</span></li>
-        <li><span>Refrigerante</span><span class="price">R$ 6,00</span></li>
-      </ul>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--dark);
+        color: var(--text);
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        padding: 40px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.2rem;
+      }
+
+      header p {
+        margin-top: 10px;
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0 15px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: 15px;
+        padding: 20px;
+        border: 2px dashed var(--primary);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 14px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      .drink-name {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .drink-desc {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px 10px;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      @media (min-width: 700px) {
+        .container {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Food Truck Boombar</h1>
+      <p>Explosão de sabor em cada pedido!</p>
+    </header>
+
+    <div class="container">
+      <!-- DRINKS -->
+      <div class="card">
+        <h2>🍹 Drinks</h2>
+        <ul>
+          <li>
+            <div class="drink-name">Bomba Tropical</div>
+            <div class="drink-desc">Morango • Abacaxi • Chocolate</div>
+          </li>
+
+          <li>
+            <div class="drink-name">Pine Gold</div>
+            <div class="drink-desc">Drink feito no Abacaxi</div>
+          </li>
+
+          <li>
+            <div class="drink-name">Caipira Explosiva</div>
+            <div class="drink-desc">Morango • Abacaxi • Limão</div>
+          </li>
+
+          <li>
+            <div class="drink-name">Bomba Atômica</div>
+            <div class="drink-desc">Gin, Limão e Tônica</div>
+          </li>
+
+          <li>
+            <div class="drink-name">Tropical Kids (Sem álcool)</div>
+            <div class="drink-desc">
+              Morango • Abacaxi • Chocolate
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PETISCOS -->
+      <div class="card">
+        <h2>🍟 Petiscos</h2>
+        <ul>
+          <li>
+            <div class="drink-name">Pastéis que bombam</div>
+            <div class="drink-desc">
+              Carne • Frango com Requeijão • Presunto e Queijo •
+              Calabresa e Queijo
+            </div>
+          </li>
+
+          <li>
+            <div class="drink-name">Enrolado de Salsicha</div>
+          </li>
+
+          <li>
+            <div class="drink-name">Iscas de Peixe</div>
+          </li>
+
+          <li>
+            <div class="drink-name">Batata Bombar</div>
+            <div class="drink-desc">Porção P • Porção G</div>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Seção Petiscos -->
-    <div class="card">
-      <h2>🍟 Petiscos</h2>
-      <ul>
-        <li><span>Pastel</span><span class="price">R$ 7,00</span></li>
-        <li><span>Enrolado de Salsicha</span><span class="price">R$ 6,00</span></li>
-        <li><span>Batata-Frita</span><span class="price">R$ 15,00</span></li>
-        <li><span>Iscas de Peixe</span><span class="price">R$ 22,00</span></li>
-      </ul>
-    </div>
-
-  </div>
-
-</body>
+    <footer>
+      <p>Peça rápido. Coma feliz 😋</p>
+    </footer>
+  </body>
 </html>
